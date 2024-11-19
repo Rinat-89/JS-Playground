@@ -1,5 +1,33 @@
-let i = 0; // мы уже имеем объявленную i с присвоенным значением
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+  }
+  
+  ask(
+    "Вы согласны?",
+    function() { alert("Вы согласились."); },
+    function() { alert("Вы отменили выполнение."); }
+  );
 
-for (; i < 3; i++) { // нет необходимости в "начале"
-  alert( i ); // 0, 1, 2
-}
+
+  let ask = (question, yes, no) => {
+    if (confirm(question)) {
+        yes()
+    } else {
+        no()
+    }
+  }
+
+ ask(
+    "Вы согласны?",
+    () => alert('yes'),
+    () => alert('no')
+ )
+
+ for(let i = 0; i<10; i++ ) {
+    if( i % 2 == 1){
+        continue
+    }
+    console.log(i)
+    
+ }
